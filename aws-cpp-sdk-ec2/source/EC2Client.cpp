@@ -209,6 +209,7 @@
 #include <aws/ec2/model/UnassignPrivateIpAddressesRequest.h>
 #include <aws/ec2/model/UnmonitorInstancesRequest.h>
 
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -269,6 +270,7 @@ void EC2Client::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+/*
 AcceptVpcPeeringConnectionOutcome EC2Client::AcceptVpcPeeringConnection(const AcceptVpcPeeringConnectionRequest& request) const
 {
   Aws::StringStream ss;
@@ -2909,6 +2911,7 @@ void EC2Client::DescribeImportSnapshotTasksAsyncHelper(const DescribeImportSnaps
   handler(this, request, DescribeImportSnapshotTasks(request), context);
 }
 
+
 DescribeInstanceAttributeOutcome EC2Client::DescribeInstanceAttribute(const DescribeInstanceAttributeRequest& request) const
 {
   Aws::StringStream ss;
@@ -2968,11 +2971,11 @@ void EC2Client::DescribeInstanceStatusAsyncHelper(const DescribeInstanceStatusRe
 {
   handler(this, request, DescribeInstanceStatus(request), context);
 }
-
+*/
 DescribeInstancesOutcome EC2Client::DescribeInstances(const DescribeInstancesRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri << "/2015-10-01/?Action=DescribeInstances";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -2998,7 +3001,7 @@ void EC2Client::DescribeInstancesAsyncHelper(const DescribeInstancesRequest& req
 {
   handler(this, request, DescribeInstances(request), context);
 }
-
+/*
 DescribeInternetGatewaysOutcome EC2Client::DescribeInternetGateways(const DescribeInternetGatewaysRequest& request) const
 {
   Aws::StringStream ss;
@@ -5729,3 +5732,4 @@ void EC2Client::UnmonitorInstancesAsyncHelper(const UnmonitorInstancesRequest& r
   handler(this, request, UnmonitorInstances(request), context);
 }
 
+*/

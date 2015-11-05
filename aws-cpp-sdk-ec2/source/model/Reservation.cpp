@@ -80,7 +80,7 @@ Reservation& Reservation::operator =(const XmlNode& xmlNode)
 
       m_groupsHasBeenSet = true;
     }
-    XmlNode instancesNode = resultNode.FirstChild("Instances");
+    XmlNode instancesNode = resultNode.FirstChild("instancesSet");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");

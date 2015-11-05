@@ -277,8 +277,8 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
         {
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
-
-        AWS_LOGSTREAM_TRACE(CurlTag, sizeToWrite << " bytes written to response.");
+        std::string str(ptr, ptr + size*nmemb);
+        AWS_LOGSTREAM_TRACE(CurlTag, sizeToWrite << " bytes written to response." <<str);
         return sizeToWrite;
     }
     return 0;

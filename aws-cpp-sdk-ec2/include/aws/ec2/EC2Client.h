@@ -953,7 +953,7 @@ namespace Model
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
         virtual ~EC2Client();
-
+#if 0
         /*
             <p>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use the <code>DescribeVpcPeeringConnections</code> request to view your outstanding VPC peering connection requests.</p>
         */
@@ -2663,7 +2663,7 @@ namespace Model
         Queues the request into a thread executor and triggers associated callback when operation has finished.
         */
         virtual void DescribeInstanceStatusAsync(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
+#endif
         /*
             <p>Describes one or more of your instances.</p> <p>If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant instances. If you specify an instance ID that is not valid, an error is returned. If you specify an instance that you do not own, it is not included in the returned results.</p> <p>Recently terminated instances might appear in the returned results. This interval is usually less than one hour.</p>
         */
@@ -2683,6 +2683,7 @@ namespace Model
         */
         virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+#if 0
         /*
             <p>Describes one or more of your Internet gateways.</p>
         */
@@ -4412,7 +4413,7 @@ namespace Model
         */
         virtual void UnmonitorInstancesAsync(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+#endif
   private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 

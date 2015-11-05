@@ -306,7 +306,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
       m_clientTokenHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
